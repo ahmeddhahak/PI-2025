@@ -1,13 +1,12 @@
 package tn.esprit.care4elders.services;
 
-import ch.qos.logback.classic.encoder.JsonEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tn.esprit.care4elders.entities.Roles;
 import tn.esprit.care4elders.entities.User;
 import tn.esprit.care4elders.repositories.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -72,4 +71,8 @@ public class UserService {
         return userRepository.findById(userId);
     }
 
+    // New method to list all users
+    public List<User> findAllUsers() {
+        return userRepository.findAll();
+    }
 }

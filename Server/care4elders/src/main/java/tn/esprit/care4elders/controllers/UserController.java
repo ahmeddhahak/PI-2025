@@ -5,18 +5,26 @@ import org.springframework.web.bind.annotation.*;
 import tn.esprit.care4elders.entities.User;
 import tn.esprit.care4elders.services.UserService;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/users")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping
+    // Create user endpoint is now /users/add
+    @PostMapping("/add")
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
+    }
+
+    // New endpoint to list all users: /users/list
+    @GetMapping("/list")
+    public List<User> listUsers() {
+        return userService.findAllUsers();
     }
 
     @PutMapping("/{id}")
