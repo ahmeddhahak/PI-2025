@@ -19,6 +19,7 @@ export class UserListComponent implements OnInit {
     this.userService.listUsers().subscribe({
       next: (data: any) => {
         this.users = data;
+        console.log(data)
       },
       error: (err: any) => {
         console.error('Error fetching users:', err);
