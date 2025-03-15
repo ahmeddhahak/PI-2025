@@ -1,0 +1,18 @@
+<div>
+    <h2>Add New User</h2>
+    <form (ngSubmit)="addUser()">
+        <label>Username:</label>
+        <input [(ngModel)]="newUser.username" name="username" required />
+
+      <label>Email:</label>
+      <input [(ngModel)]="newUser.email" name="email" required />
+  
+      <label>Password:</label>
+      <input [(ngModel)]="newUser.password" name="password" required type="password" />
+  
+      <!-- Possibly add roles selection, etc. -->
+  
+      <button type="submit">Add</button>
+    </form>
+  </div>
+  

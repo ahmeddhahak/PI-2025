@@ -1,0 +1,19 @@
+<div>
+    <h2>User List</h2>
+    <table>
+      <tr>
+        <th>Email</th>
+        <th>Roles</th>
+        <th>Actions</th>
+      </tr>
+      <tr *ngFor="let user of users">
+        <td>{{ user.email }}</td>
+        <td>{{ user.roles?.join(', ') }}</td>
+        <td>
+          <button (click)="delete(user.id)">Delete</button>
+          <!-- Possibly link to edit form, etc. -->
+        </td>
+      </tr>
+    </table>
+  </div>
+  

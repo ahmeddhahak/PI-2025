@@ -8,6 +8,7 @@ import tn.esprit.care4elders.services.UserService;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/users")
 public class UserController {
